@@ -10,10 +10,7 @@
 </div>
 
 </p>
-  <p style="overflow: hidden; padding: 20px;">
-  <img src="images/3849223.jpg" align="right" alt="Profile Views" width="220" style="margin-left: 20px;" />
- 
-</p>
+  
 
 &nbsp;  
 &nbsp;
