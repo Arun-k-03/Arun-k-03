@@ -1,1 +1,588 @@
+<svg
+  width="1200"
+  height="360"
+  viewBox="0 0 1200 360"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
 
+  <defs>
+
+    <!-- BACKGROUND -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360">
+      <stop offset="0%" stop-color="#020409"/>
+      <stop offset="45%" stop-color="#06121A"/>
+      <stop offset="100%" stop-color="#020409"/>
+    </linearGradient>
+
+    <!-- CYAN -->
+    <linearGradient id="cyanGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00F5FF"/>
+      <stop offset="50%" stop-color="#00AEEF"/>
+      <stop offset="100%" stop-color="#0077FF"/>
+    </linearGradient>
+
+    <!-- GREEN -->
+    <linearGradient id="greenGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00FF9D"/>
+      <stop offset="100%" stop-color="#00A86B"/>
+    </linearGradient>
+
+    <!-- GLOW -->
+    <filter id="cyanGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <!-- GRID -->
+    <pattern
+      id="smallGrid"
+      width="40"
+      height="40"
+      patternUnits="userSpaceOnUse"
+    >
+      <path
+        d="M 40 0 L 0 0 0 40"
+        fill="none"
+        stroke="#00D9FF"
+        stroke-width="0.5"
+        opacity="0.15"
+      />
+    </pattern>
+
+    <!-- CLIP -->
+    <clipPath id="sceneClip">
+      <rect width="1200" height="360" rx="18"/>
+    </clipPath>
+
+  </defs>
+
+
+  <g clip-path="url(#sceneClip)">
+
+    <!-- BASE -->
+    <rect width="1200" height="360" fill="url(#bg)"/>
+
+    <!-- BACKGROUND GRID -->
+    <rect
+      width="1200"
+      height="360"
+      fill="url(#smallGrid)"
+      opacity="0.35"
+    />
+
+    <!-- RADIAL LIGHT -->
+    <ellipse
+      cx="600"
+      cy="160"
+      rx="420"
+      ry="180"
+      fill="#00E5FF"
+      opacity="0.05"
+      filter="url(#softGlow)"
+    >
+      <animate
+        attributeName="opacity"
+        values="0.03;0.08;0.03"
+        dur="5s"
+        repeatCount="indefinite"
+      />
+    </ellipse>
+
+
+    <!-- =============================== -->
+    <!-- 3D PERSPECTIVE FLOOR -->
+    <!-- =============================== -->
+
+    <g
+      transform="translate(600 350) skewX(-4)"
+      stroke="#00DFFF"
+      opacity="0.25"
+    >
+
+      <path d="M0 0 L-540 -140"/>
+      <path d="M0 0 L-450 -140"/>
+      <path d="M0 0 L-360 -140"/>
+      <path d="M0 0 L-270 -140"/>
+      <path d="M0 0 L-180 -140"/>
+      <path d="M0 0 L-90 -140"/>
+
+      <path d="M0 0 L90 -140"/>
+      <path d="M0 0 L180 -140"/>
+      <path d="M0 0 L270 -140"/>
+      <path d="M0 0 L360 -140"/>
+      <path d="M0 0 L450 -140"/>
+      <path d="M0 0 L540 -140"/>
+
+      <path d="M-500 -20 L500 -20"/>
+      <path d="M-455 -40 L455 -40"/>
+      <path d="M-410 -60 L410 -60"/>
+      <path d="M-365 -80 L365 -80"/>
+      <path d="M-320 -100 L320 -100"/>
+      <path d="M-275 -120 L275 -120"/>
+      <path d="M-230 -140 L230 -140"/>
+
+    </g>
+
+
+    <!-- =============================== -->
+    <!-- MOVING NETWORK PACKETS -->
+    <!-- =============================== -->
+
+    <g fill="#00F5FF" filter="url(#cyanGlow)">
+
+      <circle r="3">
+        <animateMotion
+          dur="6s"
+          repeatCount="indefinite"
+          path="M40 300 C300 100 450 260 720 80"
+        />
+      </circle>
+
+      <circle r="2">
+        <animateMotion
+          dur="8s"
+          repeatCount="indefinite"
+          path="M1180 290 C900 100 760 270 500 40"
+        />
+      </circle>
+
+      <circle r="2.5">
+        <animateMotion
+          dur="5s"
+          repeatCount="indefinite"
+          path="M150 40 C350 180 820 30 1080 220"
+        />
+      </circle>
+
+    </g>
+
+
+    <!-- =============================== -->
+    <!-- LEFT HUD PANEL -->
+    <!-- =============================== -->
+
+    <g transform="translate(55 70)">
+
+      <rect
+        width="235"
+        height="215"
+        rx="13"
+        fill="#07131C"
+        stroke="#00DFFF"
+        stroke-opacity="0.45"
+      />
+
+      <rect
+        width="235"
+        height="3"
+        rx="2"
+        fill="url(#cyanGradient)"
+      />
+
+      <text
+        x="20"
+        y="36"
+        fill="#00EFFF"
+        font-family="monospace"
+        font-size="13"
+        font-weight="700"
+      >
+        SECURITY.RESEARCH
+      </text>
+
+      <text
+        x="20"
+        y="70"
+        fill="#8B9FB2"
+        font-family="monospace"
+        font-size="11"
+      >
+        STATUS
+      </text>
+
+      <circle
+        cx="24"
+        cy="92"
+        r="5"
+        fill="#00FF9D"
+        filter="url(#cyanGlow)"
+      >
+        <animate
+          attributeName="opacity"
+          values="1;0.25;1"
+          dur="1.5s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <text
+        x="38"
+        y="97"
+        fill="#E6EDF3"
+        font-family="monospace"
+        font-size="12"
+      >
+        ACTIVE RESEARCH
+      </text>
+
+      <text
+        x="20"
+        y="128"
+        fill="#8B9FB2"
+        font-family="monospace"
+        font-size="11"
+      >
+        TARGET DOMAINS
+      </text>
+
+      <text
+        x="20"
+        y="151"
+        fill="#D8E5EE"
+        font-family="monospace"
+        font-size="11"
+      >
+        IoT / WEB / NETWORK
+      </text>
+
+      <text
+        x="20"
+        y="174"
+        fill="#D8E5EE"
+        font-family="monospace"
+        font-size="11"
+      >
+        HARDWARE / FIRMWARE
+      </text>
+
+      <text
+        x="20"
+        y="202"
+        fill="#00FF9D"
+        font-family="monospace"
+        font-size="10"
+      >
+        AUTHORIZED LABS ONLY_
+      </text>
+
+    </g>
+
+
+    <!-- =============================== -->
+    <!-- CENTRAL SECURITY CORE -->
+    <!-- =============================== -->
+
+    <g transform="translate(360 52)">
+
+      <!-- rotating outer ring -->
+      <circle
+        cx="240"
+        cy="115"
+        r="86"
+        stroke="#00CFFF"
+        stroke-width="1"
+        opacity="0.25"
+        stroke-dasharray="12 10"
+      >
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 240 115"
+          to="360 240 115"
+          dur="14s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <circle
+        cx="240"
+        cy="115"
+        r="69"
+        stroke="#00FF9D"
+        stroke-width="1"
+        opacity="0.20"
+        stroke-dasharray="3 9"
+      >
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="360 240 115"
+          to="0 240 115"
+          dur="9s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <!-- HEXAGON -->
+      <polygon
+        points="
+          240,43
+          302,79
+          302,151
+          240,187
+          178,151
+          178,79
+        "
+        fill="#061A22"
+        stroke="url(#cyanGradient)"
+        stroke-width="2"
+        filter="url(#cyanGlow)"
+      />
+
+      <!-- SHIELD -->
+      <path
+        d="
+          M240 73
+          L277 87
+          V115
+          C277 144 261 161 240 171
+          C219 161 203 144 203 115
+          V87
+          Z
+        "
+        fill="#051219"
+        stroke="#00F5FF"
+        stroke-width="2"
+      />
+
+      <!-- LOCK -->
+      <rect
+        x="226"
+        y="113"
+        width="28"
+        height="25"
+        rx="4"
+        fill="#00E5FF"
+        opacity="0.85"
+      />
+
+      <path
+        d="M231 113 V104 C231 92 249 92 249 104 V113"
+        stroke="#00E5FF"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+      <!-- SCANNER -->
+      <line
+        x1="190"
+        y1="83"
+        x2="290"
+        y2="83"
+        stroke="#00FF9D"
+        stroke-width="2"
+        opacity="0"
+        filter="url(#cyanGlow)"
+      >
+        <animate
+          attributeName="y1"
+          values="83;153;83"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="y2"
+          values="83;153;83"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="opacity"
+          values="0;0.9;0"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </line>
+
+
+      <!-- NAME -->
+      <text
+        x="240"
+        y="238"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Arial, sans-serif"
+        font-size="37"
+        font-weight="800"
+        letter-spacing="7"
+      >
+        ARUN K
+      </text>
+
+      <text
+        x="240"
+        y="270"
+        text-anchor="middle"
+        fill="#00E5FF"
+        font-family="monospace"
+        font-size="15"
+        letter-spacing="1"
+      >
+        ETHICAL HACKER • SECURITY RESEARCHER
+      </text>
+
+      <text
+        x="240"
+        y="296"
+        text-anchor="middle"
+        fill="#00FF9D"
+        font-family="monospace"
+        font-size="14"
+      >
+        IoT PENETRATION TESTER
+      </text>
+
+    </g>
+
+
+    <!-- =============================== -->
+    <!-- RIGHT TELEMETRY -->
+    <!-- =============================== -->
+
+    <g transform="translate(910 71)">
+
+      <rect
+        width="235"
+        height="214"
+        rx="13"
+        fill="#07131C"
+        stroke="#00DFFF"
+        stroke-opacity="0.45"
+      />
+
+      <rect
+        width="235"
+        height="3"
+        rx="2"
+        fill="url(#greenGradient)"
+      />
+
+      <text
+        x="18"
+        y="35"
+        fill="#00FF9D"
+        font-family="monospace"
+        font-size="13"
+        font-weight="700"
+      >
+        ATTACK.SURFACE
+      </text>
+
+      <!-- waveform -->
+      <polyline
+        points="
+        18,70
+        37,70
+        48,52
+        62,94
+        78,64
+        96,72
+        117,72
+        132,42
+        146,91
+        162,70
+        216,70
+        "
+        fill="none"
+        stroke="#00E5FF"
+        stroke-width="2"
+        filter="url(#cyanGlow)"
+        stroke-dasharray="260"
+        stroke-dashoffset="260"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          values="260;0"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </polyline>
+
+      <text
+        x="18"
+        y="120"
+        fill="#899AA8"
+        font-family="monospace"
+        font-size="10"
+      >
+        RESEARCH VECTOR
+      </text>
+
+      <text
+        x="18"
+        y="145"
+        fill="#DCE8EF"
+        font-family="monospace"
+        font-size="11"
+      >
+        MQTT • BLE • UART
+      </text>
+
+      <text
+        x="18"
+        y="168"
+        fill="#DCE8EF"
+        font-family="monospace"
+        font-size="11"
+      >
+        API • WEB • NETWORK
+      </text>
+
+      <text
+        x="18"
+        y="195"
+        fill="#00E5FF"
+        font-family="monospace"
+        font-size="10"
+      >
+        ANALYZE → TEST → DOCUMENT
+      </text>
+
+    </g>
+
+
+    <!-- TOP SCANNING LINE -->
+    <rect
+      x="-300"
+      y="0"
+      width="180"
+      height="360"
+      fill="#00EFFF"
+      opacity="0.015"
+      transform="skewX(-18)"
+    >
+      <animate
+        attributeName="x"
+        values="-300;1400"
+        dur="8s"
+        repeatCount="indefinite"
+      />
+    </rect>
+
+
+    <!-- BORDER -->
+    <rect
+      x="1"
+      y="1"
+      width="1198"
+      height="358"
+      rx="18"
+      fill="none"
+      stroke="#00E5FF"
+      stroke-opacity="0.24"
+      stroke-width="2"
+    />
+
+  </g>
+
+</svg>
