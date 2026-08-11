@@ -1,0 +1,822 @@
+<svg width="1400" height="6120" viewBox="0 0 1400 6120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="6120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#010308"/>
+      <stop offset="30%" stop-color="#07131B"/>
+      <stop offset="70%" stop-color="#051018"/>
+      <stop offset="100%" stop-color="#010308"/>
+    </linearGradient>
+
+    <radialGradient id="coreGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(700 220) rotate(90) scale(240 420)">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.22"/>
+      <stop offset="65%" stop-color="#00E5FF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cyanGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00F5FF"/>
+      <stop offset="55%" stop-color="#00AEEF"/>
+      <stop offset="100%" stop-color="#005BFF"/>
+    </linearGradient>
+
+    <linearGradient id="greenGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00FF9D"/>
+      <stop offset="100%" stop-color="#009D68"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9D4DFF"/>
+      <stop offset="100%" stop-color="#5B00FF"/>
+    </linearGradient>
+
+    <linearGradient id="orangeGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFBC5D"/>
+      <stop offset="100%" stop-color="#FF6A2B"/>
+    </linearGradient>
+
+    <linearGradient id="barTrack" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0A1A23"/>
+      <stop offset="100%" stop-color="#102530"/>
+    </linearGradient>
+
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="35%" stop-color="#00E5FF" stop-opacity="0.015"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <pattern id="gridSmall" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" stroke="#00D9FF" stroke-width="0.6" opacity="0.10"/>
+    </pattern>
+
+    <pattern id="gridLarge" width="144" height="144" patternUnits="userSpaceOnUse">
+      <rect width="144" height="144" fill="url(#gridSmall)"/>
+      <path d="M144 0H0V144" stroke="#00E5FF" stroke-width="1" opacity="0.12"/>
+    </pattern>
+
+    <pattern id="matrixRain" width="56" height="128" patternUnits="userSpaceOnUse">
+      <text x="8" y="20" fill="#00FF9D" fill-opacity="0.055" font-family="monospace" font-size="12">01</text>
+      <text x="30" y="46" fill="#00E5FF" fill-opacity="0.05" font-family="monospace" font-size="12">10</text>
+      <text x="10" y="74" fill="#00FF9D" fill-opacity="0.04" font-family="monospace" font-size="12">11</text>
+      <text x="33" y="102" fill="#00E5FF" fill-opacity="0.04" font-family="monospace" font-size="12">00</text>
+    </pattern>
+
+    <filter id="cyanGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+
+    <filter id="strongGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="depthShadow" x="-40%" y="-40%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity="0.52"/>
+    </filter>
+
+    <clipPath id="sceneClip">
+      <rect width="1400" height="6120" rx="24"/>
+    </clipPath>
+
+    <style>
+      .section { fill:#00E5FF; font-family:monospace; font-size:22px; font-weight:700; letter-spacing:1px; }
+      .label { fill:#89A0AE; font-family:monospace; font-size:10px; }
+      .body { fill:#DDE8EF; font-family:Arial,sans-serif; font-size:16px; }
+      .body2 { fill:#DDE8EF; font-family:Arial,sans-serif; font-size:15px; }
+      .mono { fill:#EAF5FB; font-family:monospace; font-size:16px; }
+      .monoSm { fill:#EAF5FB; font-family:monospace; font-size:14px; }
+      .tiny { fill:#7E95A4; font-family:monospace; font-size:11px; }
+      .badge { fill:#0A1520; stroke:#123142; stroke-width:1.2; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#sceneClip)">
+    <!-- Base -->
+    <rect width="1400" height="6120" fill="url(#bg)"/>
+    <rect width="1400" height="6120" fill="url(#gridLarge)" opacity="0.46"/>
+    <rect width="1400" height="6120" fill="url(#matrixRain)" opacity="0.52">
+      <animateTransform attributeName="transform" type="translate" from="0 -128" to="0 0" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <ellipse cx="700" cy="200" rx="500" ry="220" fill="url(#coreGlow)">
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="6.2s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Ambient glow clouds -->
+    <ellipse cx="250" cy="120" rx="200" ry="100" fill="#00E5FF" opacity="0.04" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.02;0.06;0.02" dur="7s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1120" cy="140" rx="170" ry="90" fill="#00FF9D" opacity="0.035" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.02;0.05;0.02" dur="6.4s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1180" cy="3100" rx="240" ry="120" fill="#9D4DFF" opacity="0.03" filter="url(#softGlow)"/>
+    <ellipse cx="230" cy="4550" rx="240" ry="120" fill="#00E5FF" opacity="0.03" filter="url(#softGlow)"/>
+
+    <!-- Animated scan beams -->
+    <rect x="-320" y="0" width="190" height="6120" fill="#00EFFF" opacity="0.015" transform="skewX(-18)">
+      <animate attributeName="x" values="-320;1640" dur="13s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1660" y="0" width="100" height="6120" fill="#00FF9D" opacity="0.012" transform="skewX(-18)">
+      <animate attributeName="x" values="1660;-260" dur="17s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Side rails -->
+    <rect x="18" y="120" width="2" height="5860" rx="1" fill="url(#cyanGradient)" opacity="0.45"/>
+    <rect x="1380" y="120" width="2" height="5860" rx="1" fill="url(#greenGradient)" opacity="0.45"/>
+
+    <!-- Vertical tracer nodes -->
+    <circle cx="19" cy="160" r="4" fill="#00F5FF" filter="url(#strongGlow)">
+      <animate attributeName="cy" values="160;5900;160" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1381" cy="5900" r="4" fill="#00FF9D" filter="url(#strongGlow)">
+      <animate attributeName="cy" values="5900;160;5900" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Floating packet particles -->
+    <g fill="#00F5FF" filter="url(#cyanGlow)">
+      <circle r="3"><animateMotion dur="6.5s" repeatCount="indefinite" path="M50 330 C260 130 520 300 900 76"/></circle>
+      <circle r="2"><animateMotion dur="7.4s" repeatCount="indefinite" path="M1320 300 C1030 130 770 310 470 48"/></circle>
+      <circle r="2.4"><animateMotion dur="8.2s" repeatCount="indefinite" path="M150 1200 C430 1010 920 1280 1230 990"/></circle>
+      <circle r="2.7"><animateMotion dur="7.7s" repeatCount="indefinite" path="M1180 2320 C760 2140 430 2480 120 2255"/></circle>
+      <circle r="2.4"><animateMotion dur="9.2s" repeatCount="indefinite" path="M180 4200 C500 3940 920 4320 1290 4010"/></circle>
+    </g>
+
+    <!-- outer border -->
+    <rect x="1.5" y="1.5" width="1397" height="6117" rx="22" stroke="#00E5FF" stroke-opacity="0.20" stroke-width="2"/>
+
+    <!-- top brackets -->
+    <g stroke="#00E5FF" stroke-width="2" opacity="0.65">
+      <path d="M24 34H90M24 34V100"/>
+      <path d="M1310 34H1376M1376 34V100"/>
+      <path d="M24 6020H90M24 6086V6020"/>
+      <path d="M1310 6086H1376M1376 6020V6086"/>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- HERO HEADER IN THE STYLE YOU LIKED -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 44)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="420" rx="22" fill="#01070A" opacity="0.72"/>
+      <rect width="1280" height="420" rx="22" fill="#06131C" fill-opacity="0.92" stroke="#00DFFF" stroke-opacity="0.34"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <rect x="1" y="1" width="1278" height="418" rx="21" fill="url(#glass)"/>
+
+      <!-- Perspective cyber floor -->
+      <g transform="translate(640 418)" stroke="#00DFFF" opacity="0.23" stroke-width="1">
+        <path d="M0 0L-580 -170"/><path d="M0 0L-470 -170"/><path d="M0 0L-360 -170"/>
+        <path d="M0 0L-250 -170"/><path d="M0 0L-140 -170"/><path d="M0 0L-70 -170"/>
+        <path d="M0 0L70 -170"/><path d="M0 0L140 -170"/><path d="M0 0L250 -170"/>
+        <path d="M0 0L360 -170"/><path d="M0 0L470 -170"/><path d="M0 0L580 -170"/>
+        <path d="M-560 -20H560"/><path d="M-505 -43H505"/><path d="M-450 -67H450"/>
+        <path d="M-395 -93H395"/><path d="M-340 -120H340"/><path d="M-285 -147H285"/><path d="M-230 -170H230"/>
+      </g>
+
+      <!-- Left panel -->
+      <g transform="translate(46 78)">
+        <rect x="8" y="10" width="250" height="258" rx="16" fill="#01070B" opacity="0.7"/>
+        <rect width="250" height="258" rx="16" fill="#06131C" fill-opacity="0.92" stroke="#00DFFF" stroke-opacity="0.36"/>
+        <rect width="250" height="4" rx="2" fill="url(#cyanGradient)"/>
+        <text x="20" y="36" fill="#00EFFF" font-family="monospace" font-size="13" font-weight="700">THREAT MATRIX</text>
+        <text x="20" y="62" class="label">STATUS</text>
+        <circle cx="24" cy="84" r="5" fill="#00FF9D" filter="url(#cyanGlow)">
+          <animate attributeName="opacity" values="1;0.25;1" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <text x="39" y="89" fill="#EAF5FB" font-family="monospace" font-size="12">ACTIVE / LIVE</text>
+        <text x="20" y="120" class="label">DOMAINS</text>
+        <text x="20" y="143" fill="#D6E4ED" font-family="monospace" font-size="11">WEB • API • NETWORK</text>
+        <text x="20" y="165" fill="#D6E4ED" font-family="monospace" font-size="11">IoT • FIRMWARE • HARDWARE</text>
+        <text x="20" y="198" class="label">PROFILE</text>
+        <text x="20" y="221" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700">ARUN K</text>
+        <text x="20" y="242" fill="#00FF9D" font-family="monospace" font-size="10">AUTHORIZED LABS ONLY_</text>
+      </g>
+
+      <!-- Right panel -->
+      <g transform="translate(984 78)">
+        <rect x="8" y="10" width="250" height="258" rx="16" fill="#01070B" opacity="0.7"/>
+        <rect width="250" height="258" rx="16" fill="#06131C" fill-opacity="0.92" stroke="#00DFFF" stroke-opacity="0.36"/>
+        <rect width="250" height="4" rx="2" fill="url(#greenGradient)"/>
+        <text x="20" y="36" fill="#00FF9D" font-family="monospace" font-size="13" font-weight="700">OFFENSIVE HUD</text>
+        <polyline points="20,80 42,80 54,58 67,103 84,68 103,80 128,80 143,44 160,96 178,77 228,77"
+          fill="none" stroke="#00E5FF" stroke-width="2" filter="url(#cyanGlow)" stroke-dasharray="280" stroke-dashoffset="280">
+          <animate attributeName="stroke-dashoffset" values="280;0" dur="3s" repeatCount="indefinite"/>
+        </polyline>
+        <text x="20" y="124" class="label">VECTORS</text>
+        <text x="20" y="147" fill="#D6E4ED" font-family="monospace" font-size="11">RECON • ENUM • ANALYSIS</text>
+        <text x="20" y="169" fill="#D6E4ED" font-family="monospace" font-size="11">TEST • EXPLORE • DOCUMENT</text>
+        <text x="20" y="202" class="label">SIGNATURE</text>
+        <text x="20" y="224" fill="#FFFFFF" font-family="monospace" font-size="14">ETHICAL HACKER</text>
+        <text x="20" y="244" fill="#00E5FF" font-family="monospace" font-size="10">ATTACK SURFACE / LIVE TRACK</text>
+      </g>
+
+      <!-- Central main cyber core -->
+      <g transform="translate(400 44)">
+        <circle cx="240" cy="140" r="108" stroke="#00DFFF" stroke-width="1.2" opacity="0.23" stroke-dasharray="16 12">
+          <animateTransform attributeName="transform" type="rotate" from="0 240 140" to="360 240 140" dur="18s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="240" cy="140" r="88" stroke="#00FF9D" stroke-width="1.2" opacity="0.19" stroke-dasharray="4 10">
+          <animateTransform attributeName="transform" type="rotate" from="360 240 140" to="0 240 140" dur="11s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="240" cy="140" r="128" stroke="#9D4DFF" stroke-width="1" opacity="0.13" stroke-dasharray="3 12">
+          <animateTransform attributeName="transform" type="rotate" from="0 240 140" to="-360 240 140" dur="20s" repeatCount="indefinite"/>
+        </circle>
+
+        <g fill="#00E5FF" filter="url(#cyanGlow)">
+          <circle cx="240" cy="32" r="4"><animateTransform attributeName="transform" type="rotate" from="0 240 140" to="360 240 140" dur="18s" repeatCount="indefinite"/></circle>
+          <circle cx="328" cy="140" r="4" fill="#00FF9D"><animateTransform attributeName="transform" type="rotate" from="360 240 140" to="0 240 140" dur="11s" repeatCount="indefinite"/></circle>
+          <circle cx="112" cy="140" r="3.5" fill="#9D4DFF"><animateTransform attributeName="transform" type="rotate" from="0 240 140" to="-360 240 140" dur="20s" repeatCount="indefinite"/></circle>
+        </g>
+
+        <polygon points="240,58 308,97 308,183 240,222 172,183 172,97" fill="#061A22" stroke="url(#cyanGradient)" stroke-width="2.6" filter="url(#strongGlow)"/>
+        <polygon points="248,68 316,107 316,193 248,232 180,193 180,107" fill="#00111A" opacity="0.25"/>
+
+        <path d="M240 92 L279 107 V140 C279 171 262 191 240 202 C218 191 201 171 201 140 V107 Z" fill="#041018" stroke="#00F5FF" stroke-width="2.2"/>
+        <rect x="223" y="136" width="34" height="29" rx="5" fill="#00E5FF" opacity="0.92"/>
+        <path d="M228 136V125C228 110 252 110 252 125V136" stroke="#00E5FF" stroke-width="6" stroke-linecap="round"/>
+        <line x1="188" y1="100" x2="292" y2="100" stroke="#00FF9D" stroke-width="2.2" opacity="0" filter="url(#cyanGlow)">
+          <animate attributeName="y1" values="100;180;100" dur="3.1s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="100;180;100" dur="3.1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;0.95;0" dur="3.1s" repeatCount="indefinite"/>
+        </line>
+
+        <text x="240" y="292" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="8">ARUN K</text>
+        <text x="240" y="322" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="15">ETHICAL HACKER • CYBERSECURITY RESEARCHER</text>
+        <text x="240" y="346" text-anchor="middle" fill="#00FF9D" font-family="monospace" font-size="14">IoT PEN TESTER • OFFENSIVE SECURITY</text>
+      </g>
+
+      <!-- Bottom dashboard -->
+      <g transform="translate(170 356)">
+        <rect width="940" height="42" rx="12" fill="#06131C" fill-opacity="0.88" stroke="#00DFFF" stroke-opacity="0.26"/>
+        <rect y="0" width="940" height="2.5" rx="1.25" fill="url(#cyanGradient)"/>
+
+        <text x="20" y="17" class="label">OFFENSIVE STACK</text>
+        <rect x="20" y="24" width="170" height="8" rx="4" fill="url(#barTrack)"/>
+        <rect x="20" y="24" width="150" height="8" rx="4" fill="url(#cyanGradient)" filter="url(#cyanGlow)">
+          <animate attributeName="width" values="40;150;150" dur="2s" repeatCount="1" fill="freeze"/>
+        </rect>
+
+        <text x="250" y="17" class="label">IoT / HARDWARE</text>
+        <rect x="250" y="24" width="170" height="8" rx="4" fill="url(#barTrack)"/>
+        <rect x="250" y="24" width="137" height="8" rx="4" fill="url(#greenGradient)" filter="url(#cyanGlow)">
+          <animate attributeName="width" values="36;137;137" dur="2.2s" repeatCount="1" fill="freeze"/>
+        </rect>
+
+        <text x="480" y="17" class="label">RESEARCH ENGINEERING</text>
+        <rect x="480" y="24" width="170" height="8" rx="4" fill="url(#barTrack)"/>
+        <rect x="480" y="24" width="146" height="8" rx="4" fill="url(#purpleGradient)" filter="url(#cyanGlow)">
+          <animate attributeName="width" values="38;146;146" dur="2.4s" repeatCount="1" fill="freeze"/>
+        </rect>
+
+        <text x="710" y="17" class="label">SHOWCASE MODE</text>
+        <rect x="710" y="24" width="190" height="8" rx="4" fill="url(#barTrack)"/>
+        <rect x="710" y="24" width="168" height="8" rx="4" fill="url(#cyanGradient)" filter="url(#cyanGlow)">
+          <animate attributeName="width" values="50;168;168" dur="2.6s" repeatCount="1" fill="freeze"/>
+        </rect>
+      </g>
+    </g>
+
+    <!-- ===== SECTION HELPER DECOR ===== -->
+    <g opacity="0.26">
+      <line x1="120" y1="494" x2="1280" y2="494" stroke="#103746"/>
+      <rect x="120" y="493" width="140" height="2" rx="1" fill="#00F5FF">
+        <animate attributeName="x" values="120;1140;120" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <line x1="120" y1="930" x2="1280" y2="930" stroke="#103746"/>
+      <rect x="120" y="929" width="140" height="2" rx="1" fill="#00F5FF">
+        <animate attributeName="x" values="120;1140;120" dur="7s" repeatCount="indefinite"/>
+      </rect>
+      <line x1="120" y1="1690" x2="1280" y2="1690" stroke="#103746"/>
+      <line x1="120" y1="2105" x2="1280" y2="2105" stroke="#103746"/>
+      <line x1="120" y1="2950" x2="1280" y2="2950" stroke="#103746"/>
+      <line x1="120" y1="3515" x2="1280" y2="3515" stroke="#103746"/>
+      <line x1="120" y1="3900" x2="1280" y2="3900" stroke="#103746"/>
+      <line x1="120" y1="4280" x2="1280" y2="4280" stroke="#103746"/>
+      <line x1="120" y1="4730" x2="1280" y2="4730" stroke="#103746"/>
+      <line x1="120" y1="5180" x2="1280" y2="5180" stroke="#103746"/>
+      <line x1="120" y1="5630" x2="1280" y2="5630" stroke="#103746"/>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 01 WHOAMI -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 500)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="380" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="380" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">01 // WHOAMI</text>
+      <text x="1110" y="42" class="tiny">IDENTITY NODE</text>
+
+      <g transform="translate(26 70)">
+        <rect x="8" y="10" width="1228" height="174" rx="14" fill="#01070B" opacity="0.7"/>
+        <rect width="1228" height="174" rx="14" fill="#050B12" stroke="#173140"/>
+        <circle cx="22" cy="20" r="5" fill="#FF5F56"/>
+        <circle cx="40" cy="20" r="5" fill="#FFBD2E"/>
+        <circle cx="58" cy="20" r="5" fill="#27C93F"/>
+        <text x="86" y="25" class="tiny">/bin/bash — security-research.profile</text>
+        <text x="22" y="56" class="mono">arun@security-research:~$ whoami</text>
+        <text x="22" y="86" class="mono">Name       : Arun K</text>
+        <text x="22" y="110" class="mono">Identity   : Ethical Hacker</text>
+        <text x="22" y="134" class="mono">Research   : Cybersecurity Research</text>
+        <text x="440" y="86" class="mono">Specialty  : IoT Penetration Testing</text>
+        <text x="440" y="110" class="mono">Focus      : Offensive Security • IoT • Web/API • Network • Hardware</text>
+        <text x="440" y="134" class="mono">Approach   : Analyze → Test → Understand → Secure → Document</text>
+      </g>
+
+      <g transform="translate(26 268)">
+        <rect width="1228" height="82" rx="14" fill="#07151E" stroke="#103748"/>
+        <text x="16" y="31" class="body">I am building my cybersecurity portfolio around <tspan fill="#FFFFFF" font-weight="700">real labs, reproducible experiments, security tooling, technical documentation, and responsible research</tspan>.</text>
+        <text x="16" y="58" class="body">My goal is not to claim that I know everything. My goal is to show <tspan fill="#FFFFFF" font-weight="700">how I investigate security problems, build controlled environments, validate findings, and improve defenses</tspan>.</text>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 02 RESEARCH MATRIX -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 950)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="700" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="700" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">02 // RESEARCH MATRIX</text>
+
+      <g transform="translate(26 72)">
+        <g>
+          <rect x="8" y="10" width="592" height="254" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="254" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#orangeGradient)"/>
+          <text x="20" y="38" fill="#FFB84D" font-family="Arial,sans-serif" font-size="22" font-weight="700">⚔ Offensive Security</text>
+          <text x="20" y="74" class="body">• Web application testing</text>
+          <text x="20" y="102" class="body">• API security</text>
+          <text x="20" y="130" class="body">• Reconnaissance</text>
+          <text x="20" y="158" class="body">• Attack-surface mapping</text>
+          <text x="20" y="186" class="body">• Vulnerability assessment</text>
+          <text x="20" y="214" class="body">• Authentication testing</text>
+          <text x="20" y="242" class="body">• Network testing</text>
+        </g>
+
+        <g transform="translate(636 0)">
+          <rect x="8" y="10" width="592" height="254" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="254" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#greenGradient)"/>
+          <text x="20" y="38" fill="#00FF9D" font-family="Arial,sans-serif" font-size="22" font-weight="700">📡 IoT Security</text>
+          <text x="20" y="74" class="body">• IoT attack surfaces</text>
+          <text x="20" y="102" class="body">• ESP32 security</text>
+          <text x="20" y="130" class="body">• MQTT</text>
+          <text x="20" y="158" class="body">• BLE</text>
+          <text x="20" y="186" class="body">• Embedded networking</text>
+          <text x="20" y="214" class="body">• Firmware analysis</text>
+          <text x="20" y="242" class="body">• Device-to-cloud security</text>
+        </g>
+
+        <g transform="translate(0 300)">
+          <rect x="8" y="10" width="592" height="254" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="254" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#purpleGradient)"/>
+          <text x="20" y="38" fill="#B483FF" font-family="Arial,sans-serif" font-size="22" font-weight="700">⚙ Hardware Security</text>
+          <text x="20" y="74" class="body">• UART</text>
+          <text x="20" y="102" class="body">• SPI</text>
+          <text x="20" y="130" class="body">• I²C</text>
+          <text x="20" y="158" class="body">• GPIO</text>
+          <text x="20" y="186" class="body">• Debug interfaces</text>
+          <text x="20" y="214" class="body">• Embedded-device interfaces</text>
+          <text x="20" y="242" class="body">• Hardware attack surfaces</text>
+        </g>
+
+        <g transform="translate(636 300)">
+          <rect x="8" y="10" width="592" height="254" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="254" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#cyanGradient)"/>
+          <text x="20" y="38" fill="#00E5FF" font-family="Arial,sans-serif" font-size="22" font-weight="700">🔬 Research Engineering</text>
+          <text x="20" y="74" class="body">• Python automation</text>
+          <text x="20" y="102" class="body">• Security tooling</text>
+          <text x="20" y="130" class="body">• Packet analysis</text>
+          <text x="20" y="158" class="body">• Lab engineering</text>
+          <text x="20" y="186" class="body">• Reproducibility</text>
+          <text x="20" y="214" class="body">• Documentation</text>
+          <text x="20" y="242" class="body">• Mitigation analysis</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 03 IoT ATTACK SURFACE -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 1710)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="330" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="330" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">03 // IoT ATTACK SURFACE</text>
+      <text x="26" y="82" class="body">I treat IoT security as a <tspan fill="#FFFFFF" font-weight="700">full-stack security problem</tspan>: hardware, firmware, protocols, network traffic, local interfaces, APIs, authentication, cloud communication, and update mechanisms all matter.</text>
+
+      <g transform="translate(72 132)">
+        <g stroke="#00DFFF" stroke-width="2" opacity="0.44">
+          <line x1="180" y1="44" x2="265" y2="44"/>
+          <line x1="435" y1="44" x2="525" y2="44"/>
+          <line x1="715" y1="44" x2="800" y2="44"/>
+          <line x1="990" y1="44" x2="1078" y2="44"/>
+        </g>
+        <g fill="#00F5FF" filter="url(#cyanGlow)">
+          <circle r="3"><animateMotion dur="2.8s" repeatCount="indefinite" path="M180 44 L265 44"/></circle>
+          <circle r="3"><animateMotion dur="3.1s" repeatCount="indefinite" path="M435 44 L525 44"/></circle>
+          <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M715 44 L800 44"/></circle>
+          <circle r="3"><animateMotion dur="3.0s" repeatCount="indefinite" path="M990 44 L1078 44"/></circle>
+        </g>
+        <g>
+          <rect width="180" height="92" rx="16" fill="#07131B" stroke="#184255"/>
+          <text x="90" y="34" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="15" font-weight="700">HARDWARE</text>
+          <text x="90" y="58" text-anchor="middle" class="monoSm">UART • SPI • I²C</text>
+          <text x="90" y="78" text-anchor="middle" class="monoSm">GPIO</text>
+
+          <rect x="265" width="170" height="92" rx="16" fill="#07131B" stroke="#184255"/>
+          <text x="350" y="34" text-anchor="middle" fill="#00FF9D" font-family="monospace" font-size="15" font-weight="700">FIRMWARE</text>
+          <text x="350" y="58" text-anchor="middle" class="monoSm">STORAGE • UPDATES</text>
+          <text x="350" y="78" text-anchor="middle" class="monoSm">LOGIC</text>
+
+          <rect x="525" width="190" height="92" rx="16" fill="#07131B" stroke="#184255"/>
+          <text x="620" y="34" text-anchor="middle" fill="#B483FF" font-family="monospace" font-size="15" font-weight="700">PROTOCOLS</text>
+          <text x="620" y="58" text-anchor="middle" class="monoSm">BLE • MQTT</text>
+          <text x="620" y="78" text-anchor="middle" class="monoSm">WI-FI • HTTP</text>
+
+          <rect x="800" width="190" height="92" rx="16" fill="#07131B" stroke="#184255"/>
+          <text x="895" y="34" text-anchor="middle" fill="#FFB84D" font-family="monospace" font-size="15" font-weight="700">INTERFACES</text>
+          <text x="895" y="58" text-anchor="middle" class="monoSm">LOCAL • DEBUG</text>
+          <text x="895" y="78" text-anchor="middle" class="monoSm">CONTROL</text>
+
+          <rect x="1078" width="170" height="92" rx="16" fill="#07131B" stroke="#184255"/>
+          <text x="1163" y="34" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="15" font-weight="700">CLOUD / API</text>
+          <text x="1163" y="58" text-anchor="middle" class="monoSm">AUTH • TOKENS</text>
+          <text x="1163" y="78" text-anchor="middle" class="monoSm">IDENTITY</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 04 WORKFLOW -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 2105)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="360" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="360" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">04 // RESEARCH WORKFLOW</text>
+
+      <g transform="translate(70 110)">
+        <line x1="58" y1="58" x2="1110" y2="58" stroke="#153C4C" stroke-width="8" stroke-linecap="round"/>
+        <line x1="58" y1="58" x2="1110" y2="58" stroke="#00DFFF" stroke-opacity="0.24" stroke-width="2"/>
+        <circle r="6" fill="#00F5FF" filter="url(#strongGlow)">
+          <animateMotion dur="6s" repeatCount="indefinite" path="M58 58 L1110 58"/>
+        </circle>
+        <g text-anchor="middle">
+          <g transform="translate(58 58)"><circle r="23" fill="#07131B" stroke="#00DFFF"/><text y="5" fill="#00E5FF" font-family="monospace" font-size="12">1</text><text y="52" class="tiny">DEFINE</text></g>
+          <g transform="translate(190 58)"><circle r="23" fill="#07131B" stroke="#00DFFF"/><text y="5" fill="#00E5FF" font-family="monospace" font-size="12">2</text><text y="52" class="tiny">MODEL</text></g>
+          <g transform="translate(322 58)"><circle r="23" fill="#07131B" stroke="#00DFFF"/><text y="5" fill="#00E5FF" font-family="monospace" font-size="12">3</text><text y="52" class="tiny">BUILD LAB</text></g>
+          <g transform="translate(454 58)"><circle r="23" fill="#07131B" stroke="#00DFFF"/><text y="5" fill="#00E5FF" font-family="monospace" font-size="12">4</text><text y="52" class="tiny">OBSERVE</text></g>
+          <g transform="translate(586 58)"><circle r="23" fill="#07131B" stroke="#00DFFF"/><text y="5" fill="#00E5FF" font-family="monospace" font-size="12">5</text><text y="52" class="tiny">ENUMERATE</text></g>
+          <g transform="translate(718 58)"><circle r="23" fill="#07131B" stroke="#FFB84D"/><text y="5" fill="#FFB84D" font-family="monospace" font-size="12">6</text><text y="52" class="tiny">TEST</text></g>
+          <g transform="translate(850 58)"><circle r="23" fill="#07131B" stroke="#00FF9D"/><text y="5" fill="#00FF9D" font-family="monospace" font-size="12">7</text><text y="52" class="tiny">VALIDATE</text></g>
+          <g transform="translate(982 58)"><circle r="23" fill="#07131B" stroke="#9D4DFF"/><text y="5" fill="#B483FF" font-family="monospace" font-size="12">8</text><text y="52" class="tiny">DOCUMENT</text></g>
+          <g transform="translate(1110 58)"><circle r="23" fill="#07131B" stroke="#00FF9D"/><text y="5" fill="#00FF9D" font-family="monospace" font-size="12">9</text><text y="52" class="tiny">MITIGATE</text></g>
+        </g>
+      </g>
+
+      <g transform="translate(60 238)">
+        <rect width="360" height="88" rx="16" fill="#07131B" stroke="#153B49"/>
+        <text x="16" y="32" fill="#00E5FF" font-family="Arial,sans-serif" font-size="18" font-weight="700">Controlled Labs</text>
+        <text x="16" y="60" class="body2">Authorization first. Evidence before assumptions.</text>
+
+        <rect x="430" width="360" height="88" rx="16" fill="#07131B" stroke="#153B49"/>
+        <text x="446" y="32" fill="#00FF9D" font-family="Arial,sans-serif" font-size="18" font-weight="700">Root Cause</text>
+        <text x="446" y="60" class="body2">Reproduce → understand → validate.</text>
+
+        <rect x="860" width="300" height="88" rx="16" fill="#07131B" stroke="#153B49"/>
+        <text x="876" y="32" fill="#B483FF" font-family="Arial,sans-serif" font-size="18" font-weight="700">Documentation</text>
+        <text x="876" y="60" class="body2">Findings + mitigations + limitations.</text>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 05 CURRENT FOCUS -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 2520)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="760" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="760" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">05 // CURRENT FOCUS</text>
+
+      <g transform="translate(26 80)">
+        <g>
+          <rect x="8" y="10" width="592" height="292" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="292" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#greenGradient)"/>
+          <text x="20" y="40" fill="#00FF9D" font-family="Arial,sans-serif" font-size="22" font-weight="700">📡 IoT &amp; Embedded Security</text>
+          <text x="20" y="80" class="mono">├── ESP32 security</text>
+          <text x="20" y="108" class="mono">├── MQTT security</text>
+          <text x="20" y="136" class="mono">├── BLE attack-surface analysis</text>
+          <text x="20" y="164" class="mono">├── UART / hardware interfaces</text>
+          <text x="20" y="192" class="mono">├── Firmware analysis</text>
+          <text x="20" y="220" class="mono">├── Embedded networking</text>
+          <text x="20" y="248" class="mono">└── Device-to-cloud communication</text>
+        </g>
+
+        <g transform="translate(636 0)">
+          <rect x="8" y="10" width="592" height="292" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="292" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#cyanGradient)"/>
+          <text x="20" y="40" fill="#00E5FF" font-family="Arial,sans-serif" font-size="22" font-weight="700">🌐 Web &amp; API Security</text>
+          <text x="20" y="80" class="mono">├── Authentication</text>
+          <text x="20" y="108" class="mono">├── Authorization</text>
+          <text x="20" y="136" class="mono">├── Input validation</text>
+          <text x="20" y="164" class="mono">├── API attack surfaces</text>
+          <text x="20" y="192" class="mono">├── Session security</text>
+          <text x="20" y="220" class="mono">├── Security misconfiguration</text>
+          <text x="20" y="248" class="mono">└── OWASP-oriented testing</text>
+        </g>
+
+        <g transform="translate(0 334)">
+          <rect x="8" y="10" width="592" height="292" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="292" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#purpleGradient)"/>
+          <text x="20" y="40" fill="#B483FF" font-family="Arial,sans-serif" font-size="22" font-weight="700">🌐 Network Security</text>
+          <text x="20" y="80" class="mono">├── Reconnaissance</text>
+          <text x="20" y="108" class="mono">├── Service enumeration</text>
+          <text x="20" y="136" class="mono">├── Packet analysis</text>
+          <text x="20" y="164" class="mono">├── Protocol inspection</text>
+          <text x="20" y="192" class="mono">├── Network traffic analysis</text>
+          <text x="20" y="220" class="mono">└── Controlled penetration-testing labs</text>
+        </g>
+
+        <g transform="translate(636 334)">
+          <rect x="8" y="10" width="592" height="292" rx="18" fill="#01070B" opacity="0.68"/>
+          <rect width="592" height="292" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <rect width="592" height="4" rx="2" fill="url(#orangeGradient)"/>
+          <text x="20" y="40" fill="#FFB84D" font-family="Arial,sans-serif" font-size="22" font-weight="700">🤖 AI-Assisted Security Engineering</text>
+          <text x="20" y="80" class="mono">├── Security workflow automation</text>
+          <text x="20" y="108" class="mono">├── Log / data analysis</text>
+          <text x="20" y="136" class="mono">├── Threat-data processing</text>
+          <text x="20" y="164" class="mono">├── Security research assistance</text>
+          <text x="20" y="192" class="mono">└── Security-tool augmentation</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 06 TOOLCHAIN -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 3355)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="520" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="520" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">06 // SECURITY TOOLCHAIN</text>
+
+      <g transform="translate(26 84)">
+        <rect width="1228" height="118" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+        <text x="20" y="36" fill="#FFB84D" font-family="Arial,sans-serif" font-size="19" font-weight="700">Offensive Security</text>
+        <g transform="translate(214 18)">
+          <rect class="badge" width="130" height="38" rx="12"/><text x="65" y="24" text-anchor="middle" class="monoSm">Kali Linux</text>
+          <g transform="translate(148 0)"><rect class="badge" width="130" height="38" rx="12"/><text x="65" y="24" text-anchor="middle" class="monoSm">Burp Suite</text></g>
+          <g transform="translate(296 0)"><rect class="badge" width="110" height="38" rx="12"/><text x="55" y="24" text-anchor="middle" class="monoSm">Nmap</text></g>
+          <g transform="translate(424 0)"><rect class="badge" width="130" height="38" rx="12"/><text x="65" y="24" text-anchor="middle" class="monoSm">Wireshark</text></g>
+          <g transform="translate(572 0)"><rect class="badge" width="130" height="38" rx="12"/><text x="65" y="24" text-anchor="middle" class="monoSm">Metasploit</text></g>
+          <g transform="translate(720 0)"><rect class="badge" width="110" height="38" rx="12"/><text x="55" y="24" text-anchor="middle" class="monoSm">OWASP</text></g>
+        </g>
+      </g>
+
+      <g transform="translate(26 224)">
+        <rect width="1228" height="118" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+        <text x="20" y="36" fill="#00FF9D" font-family="Arial,sans-serif" font-size="19" font-weight="700">IoT / Embedded</text>
+        <g transform="translate(214 18)">
+          <rect class="badge" width="105" height="38" rx="12"/><text x="52" y="24" text-anchor="middle" class="monoSm">ESP32</text>
+          <g transform="translate(122 0)"><rect class="badge" width="120" height="38" rx="12"/><text x="60" y="24" text-anchor="middle" class="monoSm">Arduino</text></g>
+          <g transform="translate(259 0)"><rect class="badge" width="150" height="38" rx="12"/><text x="75" y="24" text-anchor="middle" class="monoSm">Raspberry Pi</text></g>
+          <g transform="translate(426 0)"><rect class="badge" width="100" height="38" rx="12"/><text x="50" y="24" text-anchor="middle" class="monoSm">MQTT</text></g>
+          <g transform="translate(543 0)"><rect class="badge" width="100" height="38" rx="12"/><text x="50" y="24" text-anchor="middle" class="monoSm">UART</text></g>
+          <g transform="translate(660 0)"><rect class="badge" width="100" height="38" rx="12"/><text x="50" y="24" text-anchor="middle" class="monoSm">BLE</text></g>
+        </g>
+      </g>
+
+      <g transform="translate(26 364)">
+        <rect width="1228" height="118" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+        <text x="20" y="36" fill="#00E5FF" font-family="Arial,sans-serif" font-size="19" font-weight="700">Programming / Engineering</text>
+        <g transform="translate(214 18)">
+          <rect class="badge" width="105" height="38" rx="12"/><text x="52" y="24" text-anchor="middle" class="monoSm">Python</text>
+          <g transform="translate(122 0)"><rect class="badge" width="70" height="38" rx="12"/><text x="35" y="24" text-anchor="middle" class="monoSm">C</text></g>
+          <g transform="translate(209 0)"><rect class="badge" width="88" height="38" rx="12"/><text x="44" y="24" text-anchor="middle" class="monoSm">Java</text></g>
+          <g transform="translate(314 0)"><rect class="badge" width="125" height="38" rx="12"/><text x="62" y="24" text-anchor="middle" class="monoSm">JavaScript</text></g>
+          <g transform="translate(456 0)"><rect class="badge" width="125" height="38" rx="12"/><text x="62" y="24" text-anchor="middle" class="monoSm">TypeScript</text></g>
+          <g transform="translate(598 0)"><rect class="badge" width="88" height="38" rx="12"/><text x="44" y="24" text-anchor="middle" class="monoSm">Linux</text></g>
+          <g transform="translate(703 0)"><rect class="badge" width="70" height="38" rx="12"/><text x="35" y="24" text-anchor="middle" class="monoSm">Git</text></g>
+          <g transform="translate(790 0)"><rect class="badge" width="96" height="38" rx="12"/><text x="48" y="24" text-anchor="middle" class="monoSm">Docker</text></g>
+        </g>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 07 FEATURED WORK -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 3920)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="310" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="310" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">07 // FEATURED WORK</text>
+
+      <g transform="translate(26 72)">
+        <rect x="8" y="10" width="1228" height="206" rx="18" fill="#01070B" opacity="0.68"/>
+        <rect width="1228" height="206" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+        <rect width="1228" height="4" rx="2" fill="url(#cyanGradient)"/>
+
+        <g transform="translate(90 106)">
+          <polygon points="0,-52 46,-26 46,26 0,52 -46,26 -46,-26" fill="#061A22" stroke="#00DFFF" stroke-width="2"/>
+          <circle r="24" fill="#041018" stroke="#00FF9D" stroke-dasharray="5 5">
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="7s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M-16 8 L-4 -6 L7 1 L23 -17" fill="none" stroke="#00FF9D" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <text x="172" y="38" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="22" font-weight="700">🛡 AI-Powered Port Scanning &amp; Phishing Detection Tool</text>
+        <text x="172" y="74" class="body">A Python-based cybersecurity project combining network-port scanning with phishing-URL detection.</text>
+        <text x="172" y="108" class="body">Research / engineering areas</text>
+
+        <g transform="translate(172 126)">
+          <rect class="badge" width="96" height="34" rx="10"/><text x="48" y="22" text-anchor="middle" class="monoSm">Python</text>
+          <g transform="translate(110 0)"><rect class="badge" width="150" height="34" rx="10"/><text x="75" y="22" text-anchor="middle" class="monoSm">Network Security</text></g>
+          <g transform="translate(274 0)"><rect class="badge" width="135" height="34" rx="10"/><text x="67" y="22" text-anchor="middle" class="monoSm">Port Scanning</text></g>
+          <g transform="translate(423 0)"><rect class="badge" width="155" height="34" rx="10"/><text x="77" y="22" text-anchor="middle" class="monoSm">Phishing Detection</text></g>
+          <g transform="translate(592 0)"><rect class="badge" width="150" height="34" rx="10"/><text x="75" y="22" text-anchor="middle" class="monoSm">Security Automation</text></g>
+        </g>
+
+        <text x="990" y="178" fill="#00FF9D" font-family="monospace" font-size="16" font-weight="700">VIEW REPOSITORY →</text>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 08 CONTRIBUTION MATRIX -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 4300)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="330" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="330" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">08 // 3D CONTRIBUTION MATRIX</text>
+      <text x="26" y="78" class="body">The visualization below is generated automatically by GitHub Actions from real contribution activity.</text>
+
+      <g transform="translate(34 112)">
+        <rect width="1212" height="176" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+
+        <g transform="translate(606 156)" stroke="#00DFFF" opacity="0.20" stroke-width="1">
+          <path d="M0 0L-520 -120"/><path d="M0 0L-400 -120"/><path d="M0 0L-280 -120"/>
+          <path d="M0 0L-160 -120"/><path d="M0 0L-70 -120"/>
+          <path d="M0 0L70 -120"/><path d="M0 0L160 -120"/><path d="M0 0L280 -120"/>
+          <path d="M0 0L400 -120"/><path d="M0 0L520 -120"/>
+          <path d="M-500 -20H500"/><path d="M-430 -46H430"/><path d="M-360 -75H360"/><path d="M-290 -105H290"/>
+        </g>
+
+        <g transform="translate(120 70)">
+          <rect x="0" y="42" width="16" height="16" rx="2" fill="#10303E"/>
+          <rect x="26" y="28" width="16" height="30" rx="2" fill="#15506A"/>
+          <rect x="52" y="12" width="16" height="46" rx="2" fill="#00AFCB"/>
+          <rect x="78" y="0" width="16" height="58" rx="2" fill="#00E5FF"/>
+          <rect x="104" y="24" width="16" height="34" rx="2" fill="#00FF9D"/>
+          <rect x="130" y="10" width="16" height="48" rx="2" fill="#00E5FF"/>
+          <rect x="156" y="38" width="16" height="20" rx="2" fill="#15506A"/>
+          <rect x="182" y="18" width="16" height="40" rx="2" fill="#00FF9D"/>
+          <rect x="208" y="28" width="16" height="30" rx="2" fill="#00AFCB"/>
+          <rect x="234" y="6" width="16" height="52" rx="2" fill="#00E5FF"/>
+          <rect x="260" y="32" width="16" height="26" rx="2" fill="#15506A"/>
+          <rect x="286" y="16" width="16" height="42" rx="2" fill="#00FF9D"/>
+          <rect x="312" y="26" width="16" height="32" rx="2" fill="#00AFCB"/>
+          <rect x="338" y="8" width="16" height="50" rx="2" fill="#00E5FF"/>
+          <rect x="364" y="38" width="16" height="20" rx="2" fill="#15506A"/>
+          <rect x="390" y="20" width="16" height="38" rx="2" fill="#00FF9D"/>
+          <rect x="416" y="30" width="16" height="28" rx="2" fill="#00AFCB"/>
+          <rect x="442" y="6" width="16" height="52" rx="2" fill="#00E5FF"/>
+          <rect x="468" y="18" width="16" height="40" rx="2" fill="#00FF9D"/>
+          <rect x="494" y="36" width="16" height="22" rx="2" fill="#15506A"/>
+          <rect x="520" y="14" width="16" height="44" rx="2" fill="#00E5FF"/>
+          <rect x="546" y="30" width="16" height="28" rx="2" fill="#00AFCB"/>
+          <rect x="572" y="4" width="16" height="54" rx="2" fill="#00FF9D"/>
+          <rect x="598" y="36" width="16" height="22" rx="2" fill="#15506A"/>
+          <rect x="624" y="16" width="16" height="42" rx="2" fill="#00E5FF"/>
+          <rect x="650" y="28" width="16" height="30" rx="2" fill="#00AFCB"/>
+          <rect x="676" y="10" width="16" height="48" rx="2" fill="#00FF9D"/>
+          <rect x="702" y="24" width="16" height="34" rx="2" fill="#00E5FF"/>
+          <rect x="728" y="38" width="16" height="20" rx="2" fill="#15506A"/>
+          <rect x="754" y="16" width="16" height="42" rx="2" fill="#00AFCB"/>
+          <rect x="780" y="6" width="16" height="52" rx="2" fill="#00E5FF"/>
+          <rect x="806" y="28" width="16" height="30" rx="2" fill="#00FF9D"/>
+          <rect x="832" y="20" width="16" height="38" rx="2" fill="#00AFCB"/>
+          <rect x="858" y="12" width="16" height="46" rx="2" fill="#00E5FF"/>
+          <rect x="884" y="34" width="16" height="24" rx="2" fill="#15506A"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 09 TELEMETRY -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 4680)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="320" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="320" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">09 // GITHUB TELEMETRY</text>
+
+      <g transform="translate(26 84)">
+        <g>
+          <rect width="392" height="196" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <text x="20" y="38" fill="#00E5FF" font-family="Arial,sans-serif" font-size="20" font-weight="700">Profile Metrics</text>
+          <rect x="20" y="68" width="280" height="10" rx="5" fill="#0B1B27"/>
+          <rect x="20" y="68" width="232" height="10" rx="5" fill="url(#cyanGradient)"><animate attributeName="width" values="24;232;232" dur="2.5s" repeatCount="indefinite"/></rect>
+          <rect x="20" y="98" width="280" height="10" rx="5" fill="#0B1B27"/>
+          <rect x="20" y="98" width="194" height="10" rx="5" fill="url(#greenGradient)"><animate attributeName="width" values="24;194;194" dur="2.7s" repeatCount="indefinite"/></rect>
+          <text x="20" y="146" class="monoSm">Stats • Languages • Activity</text>
+        </g>
+        <g transform="translate(418 0)">
+          <rect width="392" height="196" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <text x="20" y="38" fill="#00FF9D" font-family="Arial,sans-serif" font-size="20" font-weight="700">Research Velocity</text>
+          <polyline points="20,144 66,122 112,132 158,94 204,112 250,72 296,90 342,50"
+            fill="none" stroke="#00FF9D" stroke-width="3" filter="url(#cyanGlow)" stroke-dasharray="400" stroke-dashoffset="400">
+            <animate attributeName="stroke-dashoffset" values="400;0" dur="3.1s" repeatCount="indefinite"/>
+          </polyline>
+        </g>
+        <g transform="translate(836 0)">
+          <rect width="392" height="196" rx="18" fill="#07131B" stroke="#1A3B4A"/>
+          <text x="20" y="38" fill="#B483FF" font-family="Arial,sans-serif" font-size="20" font-weight="700">Output Surface</text>
+          <text x="20" y="84" class="body">• Research notes</text>
+          <text x="20" y="112" class="body">• Security projects</text>
+          <text x="20" y="140" class="body">• Tooling / write-ups / labs</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 10 RESEARCH REPO STANDARD -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 5125)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="350" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="350" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="26" y="42" class="section">10 // RESEARCH REPOSITORY STANDARD</text>
+      <text x="26" y="80" class="body">Every serious security project I publish should aim to answer:</text>
+
+      <g transform="translate(44 118)">
+        <rect width="1188" height="110" rx="16" fill="#07131B" stroke="#1A3B4A"/>
+        <text x="20" y="38" class="mono">Research Question  →  Threat Model  →  Lab Environment  →  Methodology  →</text>
+        <text x="20" y="66" class="mono">Observation  →  Finding  →  Impact  →  Mitigation  →  References</text>
+      </g>
+
+      <g transform="translate(44 252)">
+        <rect width="1188" height="64" rx="14" fill="#07131B" stroke="#1A3B4A"/>
+        <text x="16" y="26" class="body2">A strong security repository should contain <tspan fill="#FFFFFF" font-weight="700">more than exploit code</tspan>.</text>
+        <text x="16" y="50" class="body2">It should make the environment, assumptions, evidence, limitations, and defensive recommendations understandable.</text>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- 11 RESPONSIBLE SECURITY -->
+    <!-- ====================================================== -->
+    <g transform="translate(60 5590)" filter="url(#depthShadow)">
+      <rect x="14" y="16" width="1280" height="270" rx="20" fill="#01060A" opacity="0.72"/>
+      <rect width="1280" height="270" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#FF7B92" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="#FF6A85"/>
+      <text x="26" y="42" fill="#FF8CA0" font-family="monospace" font-size="22" font-weight="700">11 // RESPONSIBLE SECURITY RESEARCH</text>
+
+      <g transform="translate(26 74)">
+        <rect width="1228" height="80" rx="14" fill="#0B1218" stroke="#402733"/>
+        <text x="16" y="28" class="body2">Security testing, vulnerability research, proof-of-concept demonstrations, and penetration-testing material published through this profile are intended for</text>
+        <text x="16" y="54" class="body2"><tspan fill="#FFFFFF" font-weight="700">systems I own, intentionally vulnerable environments, CTFs, controlled laboratories, or systems where explicit authorization has been granted</tspan>.</text>
+      </g>
+      <g transform="translate(26 176)">
+        <rect width="1228" height="64" rx="14" fill="#07131B" stroke="#1A3B4A"/>
+        <text x="16" y="26" class="monoSm">SECURITY EDUCATION  +  VULNERABILITY UNDERSTANDING  +  REPRODUCIBLE RESEARCH</text>
+        <text x="16" y="50" class="monoSm">DEFENSIVE IMPROVEMENT  +  RESPONSIBLE DISCLOSURE</text>
+      </g>
+    </g>
+
+    <!-- Footer -->
+    <g transform="translate(60 5890)">
+      <rect width="1280" height="170" rx="20" fill="#08131C" fill-opacity="0.96" stroke="#00DFFF" stroke-opacity="0.28"/>
+      <rect width="1280" height="4" rx="2" fill="url(#cyanGradient)"/>
+      <text x="28" y="42" class="section">12 // RESEARCH PRINCIPLES</text>
+      <text x="740" y="42" class="section">13 // MISSION</text>
+
+      <text x="28" y="78" class="monoSm">UNDERSTAND SYSTEM → IDENTIFY ATTACK SURFACE → TEST WITH AUTHORIZATION</text>
+      <text x="28" y="102" class="monoSm">COLLECT REPRODUCIBLE EVIDENCE → ROOT CAUSE → DOCUMENT → IMPROVE DEFENSE</text>
+
+      <text x="740" y="78" fill="#00FF9D" font-family="monospace" font-size="14">arun@security-research:~$ cat mission.txt</text>
+      <text x="740" y="102" class="monoSm">[+] Study real security problems</text>
+      <text x="740" y="126" class="monoSm">[+] Build controlled research environments</text>
+      <text x="740" y="150" class="monoSm">[+] Develop useful security tooling</text>
+
+      <text x="640" y="154" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="15" font-weight="700">RESEARCH • BUILD • TEST • SECURE • DOCUMENT</text>
+    </g>
+  </g>
+</svg>

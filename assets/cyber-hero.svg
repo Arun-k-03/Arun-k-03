@@ -1,0 +1,322 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradients -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#010308"/>
+      <stop offset="38%" stop-color="#07131B"/>
+      <stop offset="72%" stop-color="#051018"/>
+      <stop offset="100%" stop-color="#010308"/>
+    </linearGradient>
+
+    <radialGradient id="coreGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(600 175) rotate(90) scale(185 255)">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#00E5FF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cyanGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00F5FF"/>
+      <stop offset="55%" stop-color="#00AEEF"/>
+      <stop offset="100%" stop-color="#005BFF"/>
+    </linearGradient>
+
+    <linearGradient id="greenGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00FF9D"/>
+      <stop offset="100%" stop-color="#009D68"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9D4DFF"/>
+      <stop offset="100%" stop-color="#5B00FF"/>
+    </linearGradient>
+
+    <!-- Grid -->
+    <pattern id="gridSmall" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" stroke="#00D9FF" stroke-width="0.6" opacity="0.12"/>
+    </pattern>
+
+    <pattern id="gridLarge" width="144" height="144" patternUnits="userSpaceOnUse">
+      <rect width="144" height="144" fill="url(#gridSmall)"/>
+      <path d="M144 0H0V144" stroke="#00E5FF" stroke-width="1" opacity="0.16"/>
+    </pattern>
+
+    <!-- Filters -->
+    <filter id="cyanGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <filter id="strongGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clipping -->
+    <clipPath id="sceneClip">
+      <rect width="1200" height="420" rx="22"/>
+    </clipPath>
+
+    <!-- HUD bars -->
+    <linearGradient id="barTrack" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0A1A23"/>
+      <stop offset="100%" stop-color="#102530"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#sceneClip)">
+    <!-- Base -->
+    <rect width="1200" height="420" fill="url(#bg)"/>
+    <rect width="1200" height="420" fill="url(#gridLarge)" opacity="0.48"/>
+    <ellipse cx="600" cy="170" rx="420" ry="180" fill="url(#coreGlow)">
+      <animate attributeName="opacity" values="0.65;1;0.65" dur="5.2s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Ambient glow clouds -->
+    <ellipse cx="260" cy="100" rx="170" ry="90" fill="#00E5FF" opacity="0.04" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.02;0.06;0.02" dur="7s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="940" cy="110" rx="170" ry="90" fill="#00FF9D" opacity="0.035" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.02;0.05;0.02" dur="6.4s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Animated scan beams -->
+    <rect x="-320" y="0" width="190" height="420" fill="#00EFFF" opacity="0.02" transform="skewX(-18)">
+      <animate attributeName="x" values="-320;1440" dur="9s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1460" y="0" width="100" height="420" fill="#00FF9D" opacity="0.015" transform="skewX(-18)">
+      <animate attributeName="x" values="1460;-260" dur="13s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Perspective cyber floor -->
+    <g transform="translate(600 418)" stroke="#00DFFF" opacity="0.23" stroke-width="1">
+      <path d="M0 0L-580 -170"/>
+      <path d="M0 0L-470 -170"/>
+      <path d="M0 0L-360 -170"/>
+      <path d="M0 0L-250 -170"/>
+      <path d="M0 0L-140 -170"/>
+      <path d="M0 0L-70 -170"/>
+      <path d="M0 0L70 -170"/>
+      <path d="M0 0L140 -170"/>
+      <path d="M0 0L250 -170"/>
+      <path d="M0 0L360 -170"/>
+      <path d="M0 0L470 -170"/>
+      <path d="M0 0L580 -170"/>
+      <path d="M-560 -20H560"/>
+      <path d="M-505 -43H505"/>
+      <path d="M-450 -67H450"/>
+      <path d="M-395 -93H395"/>
+      <path d="M-340 -120H340"/>
+      <path d="M-285 -147H285"/>
+      <path d="M-230 -170H230"/>
+    </g>
+
+    <!-- Floating packet particles -->
+    <g fill="#00F5FF" filter="url(#cyanGlow)">
+      <circle r="3">
+        <animateMotion dur="6.5s" repeatCount="indefinite" path="M50 330 C260 130 420 300 760 76"/>
+      </circle>
+      <circle r="2">
+        <animateMotion dur="7.4s" repeatCount="indefinite" path="M1180 300 C930 130 770 310 470 48"/>
+      </circle>
+      <circle r="2.4">
+        <animateMotion dur="5.2s" repeatCount="indefinite" path="M150 65 C330 210 820 40 1090 235"/>
+      </circle>
+      <circle r="2.7">
+        <animateMotion dur="8.3s" repeatCount="indefinite" path="M1060 55 C760 220 430 80 120 255"/>
+      </circle>
+    </g>
+
+    <!-- Corner targeting brackets -->
+    <g stroke="#00E5FF" stroke-width="2" opacity="0.65">
+      <path d="M24 34H88M24 34V98"/>
+      <path d="M1112 34H1176M1176 34V98"/>
+      <path d="M24 322H88M24 386V322"/>
+      <path d="M1112 386H1176M1176 322V386"/>
+    </g>
+
+    <!-- Left panel -->
+    <g transform="translate(46 58)">
+      <rect width="250" height="258" rx="16" fill="#06131C" fill-opacity="0.92" stroke="#00DFFF" stroke-opacity="0.36"/>
+      <rect width="250" height="4" rx="2" fill="url(#cyanGradient)"/>
+
+      <text x="20" y="36" fill="#00EFFF" font-family="monospace" font-size="13" font-weight="700">THREAT MATRIX</text>
+      <text x="20" y="62" fill="#89A0AE" font-family="monospace" font-size="10">STATUS</text>
+
+      <circle cx="24" cy="84" r="5" fill="#00FF9D" filter="url(#cyanGlow)">
+        <animate attributeName="opacity" values="1;0.25;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="39" y="89" fill="#EAF5FB" font-family="monospace" font-size="12">ACTIVE / LIVE</text>
+
+      <text x="20" y="120" fill="#89A0AE" font-family="monospace" font-size="10">DOMAINS</text>
+      <text x="20" y="143" fill="#D6E4ED" font-family="monospace" font-size="11">WEB • API • NETWORK</text>
+      <text x="20" y="165" fill="#D6E4ED" font-family="monospace" font-size="11">IoT • FIRMWARE • HARDWARE</text>
+
+      <text x="20" y="198" fill="#89A0AE" font-family="monospace" font-size="10">PROFILE</text>
+      <text x="20" y="221" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700">ARUN K</text>
+      <text x="20" y="242" fill="#00FF9D" font-family="monospace" font-size="10">AUTHORIZED LABS ONLY_</text>
+    </g>
+
+    <!-- Right panel -->
+    <g transform="translate(904 58)">
+      <rect width="250" height="258" rx="16" fill="#06131C" fill-opacity="0.92" stroke="#00DFFF" stroke-opacity="0.36"/>
+      <rect width="250" height="4" rx="2" fill="url(#greenGradient)"/>
+
+      <text x="20" y="36" fill="#00FF9D" font-family="monospace" font-size="13" font-weight="700">OFFENSIVE HUD</text>
+
+      <polyline
+        points="20,80 42,80 54,58 67,103 84,68 103,80 128,80 143,44 160,96 178,77 228,77"
+        fill="none"
+        stroke="#00E5FF"
+        stroke-width="2"
+        filter="url(#cyanGlow)"
+        stroke-dasharray="280"
+        stroke-dashoffset="280">
+        <animate attributeName="stroke-dashoffset" values="280;0" dur="3s" repeatCount="indefinite"/>
+      </polyline>
+
+      <text x="20" y="124" fill="#89A0AE" font-family="monospace" font-size="10">VECTORS</text>
+      <text x="20" y="147" fill="#D6E4ED" font-family="monospace" font-size="11">RECON • ENUM • ANALYSIS</text>
+      <text x="20" y="169" fill="#D6E4ED" font-family="monospace" font-size="11">TEST • EXPLORE • DOCUMENT</text>
+
+      <text x="20" y="202" fill="#89A0AE" font-family="monospace" font-size="10">SIGNATURE</text>
+      <text x="20" y="224" fill="#FFFFFF" font-family="monospace" font-size="14">ETHICAL HACKER</text>
+      <text x="20" y="244" fill="#00E5FF" font-family="monospace" font-size="10">ATTACK SURFACE / LIVE TRACK</text>
+    </g>
+
+    <!-- Central main cyber core -->
+    <g transform="translate(360 34)">
+      <!-- orbit rings -->
+      <circle cx="240" cy="140" r="108" stroke="#00DFFF" stroke-width="1.2" opacity="0.23" stroke-dasharray="16 12">
+        <animateTransform attributeName="transform" type="rotate" from="0 240 140" to="360 240 140" dur="18s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="240" cy="140" r="88" stroke="#00FF9D" stroke-width="1.2" opacity="0.19" stroke-dasharray="4 10">
+        <animateTransform attributeName="transform" type="rotate" from="360 240 140" to="0 240 140" dur="11s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="240" cy="140" r="128" stroke="#9D4DFF" stroke-width="1" opacity="0.13" stroke-dasharray="3 12">
+        <animateTransform attributeName="transform" type="rotate" from="0 240 140" to="-360 240 140" dur="20s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- orbit nodes -->
+      <g fill="#00E5FF" filter="url(#cyanGlow)">
+        <circle cx="240" cy="32" r="4">
+          <animateTransform attributeName="transform" type="rotate" from="0 240 140" to="360 240 140" dur="18s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="328" cy="140" r="4" fill="#00FF9D">
+          <animateTransform attributeName="transform" type="rotate" from="360 240 140" to="0 240 140" dur="11s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="112" cy="140" r="3.5" fill="#9D4DFF">
+          <animateTransform attributeName="transform" type="rotate" from="0 240 140" to="-360 240 140" dur="20s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- main hex shield -->
+      <polygon
+        points="240,58 308,97 308,183 240,222 172,183 172,97"
+        fill="#061A22"
+        stroke="url(#cyanGradient)"
+        stroke-width="2.6"
+        filter="url(#strongGlow)"/>
+
+      <!-- inner shield -->
+      <path
+        d="M240 92 L279 107 V140 C279 171 262 191 240 202 C218 191 201 171 201 140 V107 Z"
+        fill="#041018"
+        stroke="#00F5FF"
+        stroke-width="2.2"/>
+
+      <!-- lock -->
+      <rect x="223" y="136" width="34" height="29" rx="5" fill="#00E5FF" opacity="0.92"/>
+      <path d="M228 136V125C228 110 252 110 252 125V136" stroke="#00E5FF" stroke-width="6" stroke-linecap="round"/>
+
+      <!-- scanner line -->
+      <line x1="188" y1="100" x2="292" y2="100" stroke="#00FF9D" stroke-width="2.2" opacity="0" filter="url(#cyanGlow)">
+        <animate attributeName="y1" values="100;180;100" dur="3.1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="100;180;100" dur="3.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.95;0" dur="3.1s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- side data spokes -->
+      <g stroke="#00DFFF" opacity="0.30">
+        <line x1="129" y1="140" x2="172" y2="140"/>
+        <line x1="308" y1="140" x2="351" y2="140"/>
+        <line x1="240" y1="25" x2="240" y2="58"/>
+        <line x1="240" y1="222" x2="240" y2="257"/>
+      </g>
+
+      <!-- main identity -->
+      <text x="240" y="285" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="8">ARUN K</text>
+      <text x="240" y="316" text-anchor="middle" fill="#00E5FF" font-family="monospace" font-size="15" letter-spacing="1.1">ETHICAL HACKER • CYBERSECURITY RESEARCHER</text>
+      <text x="240" y="342" text-anchor="middle" fill="#00FF9D" font-family="monospace" font-size="14" letter-spacing="1.2">IoT PEN TESTER • OFFENSIVE SECURITY</text>
+    </g>
+
+    <!-- Bottom cyber dashboard -->
+    <g transform="translate(170 350)">
+      <rect width="860" height="50" rx="12" fill="#06131C" fill-opacity="0.88" stroke="#00DFFF" stroke-opacity="0.26"/>
+      <rect y="0" width="860" height="2.5" rx="1.25" fill="url(#cyanGradient)"/>
+
+      <!-- Column 1 -->
+      <text x="20" y="18" fill="#8599A6" font-family="monospace" font-size="9">OFFENSIVE STACK</text>
+      <rect x="20" y="25" width="165" height="8" rx="4" fill="url(#barTrack)"/>
+      <rect x="20" y="25" width="146" height="8" rx="4" fill="url(#cyanGradient)" filter="url(#cyanGlow)">
+        <animate attributeName="width" values="40;146;146" dur="2s" repeatCount="1" fill="freeze"/>
+      </rect>
+      <text x="20" y="46" fill="#E8F4FA" font-family="monospace" font-size="10">RECON / WEB / API / NETWORK</text>
+
+      <!-- Column 2 -->
+      <text x="235" y="18" fill="#8599A6" font-family="monospace" font-size="9">IoT + HARDWARE</text>
+      <rect x="235" y="25" width="165" height="8" rx="4" fill="url(#barTrack)"/>
+      <rect x="235" y="25" width="132" height="8" rx="4" fill="url(#greenGradient)" filter="url(#cyanGlow)">
+        <animate attributeName="width" values="36;132;132" dur="2.2s" repeatCount="1" fill="freeze"/>
+      </rect>
+      <text x="235" y="46" fill="#E8F4FA" font-family="monospace" font-size="10">MQTT / BLE / UART / FIRMWARE</text>
+
+      <!-- Column 3 -->
+      <text x="450" y="18" fill="#8599A6" font-family="monospace" font-size="9">RESEARCH ENGINEERING</text>
+      <rect x="450" y="25" width="165" height="8" rx="4" fill="url(#barTrack)"/>
+      <rect x="450" y="25" width="139" height="8" rx="4" fill="url(#purpleGradient)" filter="url(#cyanGlow)">
+        <animate attributeName="width" values="38;139;139" dur="2.4s" repeatCount="1" fill="freeze"/>
+      </rect>
+      <text x="450" y="46" fill="#E8F4FA" font-family="monospace" font-size="10">PYTHON / LINUX / TOOLING / DOCS</text>
+
+      <!-- Column 4 -->
+      <text x="665" y="18" fill="#8599A6" font-family="monospace" font-size="9">SHOWCASE MODE</text>
+      <rect x="665" y="25" width="175" height="8" rx="4" fill="url(#barTrack)"/>
+      <rect x="665" y="25" width="157" height="8" rx="4" fill="url(#cyanGradient)" filter="url(#cyanGlow)">
+        <animate attributeName="width" values="50;157;157" dur="2.6s" repeatCount="1" fill="freeze"/>
+      </rect>
+      <text x="665" y="46" fill="#00FF9D" font-family="monospace" font-size="10">SCAN • BREAK • ANALYZE • SECURE</text>
+    </g>
+
+    <!-- Decorative side circuits -->
+    <g stroke="#00DFFF" stroke-width="1.2" opacity="0.28">
+      <path d="M304 90H336V115H355"/>
+      <path d="M304 238H334V216H354"/>
+      <path d="M846 90H876V115H896"/>
+      <path d="M846 238H876V216H896"/>
+      <circle cx="355" cy="115" r="3" fill="#00E5FF" opacity="0.85"/>
+      <circle cx="354" cy="216" r="3" fill="#00FF9D" opacity="0.85"/>
+      <circle cx="896" cy="115" r="3" fill="#00E5FF" opacity="0.85"/>
+      <circle cx="896" cy="216" r="3" fill="#00FF9D" opacity="0.85"/>
+    </g>
+
+    <!-- Subtle top labels -->
+    <g font-family="monospace" font-size="10" fill="#6F8594" opacity="0.88">
+      <text x="40" y="24">[ CYBER PROFILE INTERFACE ]</text>
+      <text x="1000" y="24">[ LIVE SIGNAL ]</text>
+    </g>
+
+    <!-- Outer border -->
+    <rect x="1" y="1" width="1198" height="418" rx="21" fill="none" stroke="#00E5FF" stroke-opacity="0.22" stroke-width="2"/>
+  </g>
+</svg>
